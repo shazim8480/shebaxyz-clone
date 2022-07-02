@@ -12,6 +12,7 @@ import DiscountSlider from "../components/Home/DiscountSlider/DiscountSlider";
 import SmallBanner from "../components/Home/SmallBanner/SmallBanner";
 import CustomerSupport from "../components/Home/CustomerSupport/CustomerSupport";
 import PrimaryButton from "../components/shared/PrimaryButton";
+import AllServices from "../components/Home/AllServices/AllServices";
 
 const HomeScreen = () => {
   return (
@@ -24,6 +25,7 @@ const HomeScreen = () => {
       >
         <Header />
         <ImageSlider />
+        <AllServices />
         <DiscountBanner />
         <DiscountSlider />
         <ImageSlider />
