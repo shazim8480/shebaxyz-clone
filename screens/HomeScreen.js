@@ -16,7 +16,7 @@ import AllServices from "../components/Home/AllServices/AllServices";
 
 const HomeScreen = () => {
   return (
-    <ScrollView>
+    <ScrollView contentContainerStyle={{ backgroundColor: "white" }}>
       <View
         style={{
           flex: 1,
