@@ -7,7 +7,12 @@ import { colors } from "../../constants/colors";
 const TitleText = (props) => {
   return (
     <VStack>
-      <Text color={colors.text} fontSize="xl" fontWeight="bold">
+      <Text
+        textTransform={props.textTransform}
+        color={colors.text}
+        fontSize="xl"
+        fontWeight="bold"
+      >
         {props.children}
       </Text>
     </VStack>

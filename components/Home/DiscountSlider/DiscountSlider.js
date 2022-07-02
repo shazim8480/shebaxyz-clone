@@ -1,12 +1,13 @@
 import { StyleSheet, Image, View, ScrollView, Dimensions } from "react-native";
 import React, { useState } from "react";
 import Carousel from "react-native-snap-carousel";
-import { VStack } from "native-base";
+import { VStack, Text } from "native-base";
+import TitleText from "../../shared/TitleText";
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 const SCREEN_HEIGHT = Dimensions.get("window").height;
 
-const ImageSlider = () => {
+const DiscountSlider = () => {
   const [carouselItems] = useState([
     {
       id: "1",
@@ -27,17 +28,15 @@ const ImageSlider = () => {
     return (
       <View
         style={{
-          marginTop: 25,
           flex: 1,
-          width: SCREEN_WIDTH - 10,
+          width: SCREEN_WIDTH,
           height: "100%",
-          borderRadius: 7,
         }}
       >
         <Image
           style={{
-            width: SCREEN_WIDTH - 30,
-            height: SCREEN_WIDTH / 2.5,
+            width: SCREEN_WIDTH / 3,
+            height: SCREEN_WIDTH / 3,
             borderRadius: 7,
           }}
           source={{ uri: item.item.uri }}
@@ -48,27 +47,35 @@ const ImageSlider = () => {
   };
 
   return (
-    <View
-      style={{
-        flex: 1,
-        flexDirection: "row",
-        justifyContent: "center",
-        marginVertical: 15,
-      }}
-    >
-      <Carousel
-        layout={"stack"}
-        autoplay={true}
-        loop={true}
-        enableMomentum={false}
-        lockScrollWhileSnapping={true}
-        data={carouselItems}
-        sliderWidth={SCREEN_WIDTH}
-        itemWidth={SCREEN_WIDTH}
-        renderItem={renderItem}
-      />
-    </View>
+    <>
+      <VStack marginTop={5} alignItems="flex-start">
+        <TitleText textTransform="uppercase">
+          Best Deal Upto 51% Discount
+        </TitleText>
+      </VStack>
+      <View
+        style={{
+          flex: 1,
+          flexDirection: "row",
+          justifyContent: "center",
+          marginVertical: 15,
+          borderRadius: 7,
+        }}
+      >
+        <Carousel
+          layout={"default"}
+          //   autoplay={true}
+          loop={true}
+          enableMomentum={false}
+          lockScrollWhileSnapping={true}
+          data={carouselItems}
+          sliderWidth={SCREEN_WIDTH / 2.7}
+          itemWidth={SCREEN_WIDTH / 3}
+          renderItem={renderItem}
+        />
+      </View>
+    </>
   );
 };
 
-export default ImageSlider;
+export default DiscountSlider;
