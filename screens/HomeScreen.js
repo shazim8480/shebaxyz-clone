@@ -4,6 +4,9 @@ import Header from "../components/shared/Header";
 import ImageSlider from "../components/shared/ImageSlider";
 import Trending from "../components/Home/Trending/Trending";
 import Recommended from "../components/Home/Recommended/Recommended";
+import CarSolution from "../components/Home/CarSolution/CarSolution";
+import ForHome from "../components/Home/ForHome/ForHome";
+import ForCare from "../components/Home/ForCare/ForCare";
 
 const HomeScreen = () => {
   return (
@@ -20,11 +23,12 @@ const HomeScreen = () => {
         <ImageSlider />
         <Trending />
         <Recommended />
+        <CarSolution />
+        <ForHome />
+        <ForCare />
       </View>
     </ScrollView>
   );
 };
 
 export default HomeScreen;
-
-const styles = StyleSheet.create({});

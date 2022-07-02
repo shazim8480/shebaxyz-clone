@@ -1,13 +1,15 @@
-import { View, FlatList } from "react-native";
+import { View, Dimensions, FlatList } from "react-native";
 import React from "react";
-import { recommended } from "../../../data/recommended";
+import { carSolution } from "../../../data/carSolution";
 
 import { HStack } from "native-base";
 import TitleText from "../../shared/TitleText";
 import SubtitleText from "../../shared/SubtitleText";
 import CategoryCard from "../../shared/CategoryCard";
 
-const Recommended = () => {
+// const SCREEN_WIDTH = Dimensions.get("window").width;
+
+const CarSolution = () => {
   const renderItem = ({ item, index }) => (
     <CategoryCard index={index} item={item} />
   );
@@ -16,7 +18,7 @@ const Recommended = () => {
     <View style={{ flex: 1 }}>
       {/* category title */}
       <HStack marginTop={10} alignItems="center" justifyContent="space-between">
-        <TitleText>Recommended</TitleText>
+        <TitleText>Car Solution</TitleText>
         <SubtitleText>See All</SubtitleText>
       </HStack>
       {/* category details */}
@@ -25,13 +27,12 @@ const Recommended = () => {
           flex: 1,
           flexDirection: "row",
           justifyContent: "space-between",
-          alignItems: "flex-start",
+          alignItems: "center",
+          // paddingBottom: 10,
         }}
       >
         <FlatList
-          data={recommended}
-          // nestedScrollEnabled={true}
-          scrollEnabled={false}
+          data={carSolution}
           numColumns="2"
           renderItem={renderItem}
           keyExtractor={(item) => item.id}
@@ -41,4 +42,4 @@ const Recommended = () => {
   );
 };
 
-export default Recommended;
+export default CarSolution;

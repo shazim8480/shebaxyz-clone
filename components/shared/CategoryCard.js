@@ -9,19 +9,34 @@ const CategoryCard = ({ index, item }) => {
   return (
     <View
       style={[
-        { paddingBottom: 40 },
-        { height: SCREEN_HEIGHT / 4.5, width: SCREEN_WIDTH / 2.3 },
-        { marginTop: index === 0 || index === 1 ? 15 : 25 },
+        // { paddingBottom: 75 },
+        {
+          height: SCREEN_HEIGHT / 4.5,
+          width: SCREEN_WIDTH / 2.4,
+          borderRadius: 8,
+        },
+        // { marginTop: index === 0 || index === 1 ? 15 : 25 },
         index % 2 == 0 ? { marginRight: 25 } : { marginRight: 0 },
       ]}
     >
-      <Box rounded="lg" marginTop={6} marginBottom="20px">
-        <AspectRatio w="25%" h="100%" ratio={12 / 8}>
-          <Image source={{ uri: item.uri }} alt="image" resizeMode="cover" />
-        </AspectRatio>
-        <Text fontWeight="light" marginTop="5px" fontSize="md">
-          {item.name}
-        </Text>
+      <Box rounded="lg" marginTop={7} marginBottom="20px">
+        {/* <AspectRatio w="25%" h="100%" ratio={20 / 8}> */}
+        <Image
+          style={{
+            height: SCREEN_HEIGHT / 8,
+            width: SCREEN_WIDTH / 2.4,
+            borderRadius: 8,
+          }}
+          source={{ uri: item.uri }}
+          alt="image"
+          resizeMode="cover"
+        />
+        {/* </AspectRatio> */}
+        <View style={{ marginTop: 5 }}>
+          <Text fontWeight="light" fontSize="md">
+            {item.name}
+          </Text>
+        </View>
       </Box>
     </View>
   );

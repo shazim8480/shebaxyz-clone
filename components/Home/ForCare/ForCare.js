@@ -1,13 +1,13 @@
 import { View, FlatList } from "react-native";
 import React from "react";
-import { recommended } from "../../../data/recommended";
+import { forCare } from "../../../data/forCare";
 
 import { HStack } from "native-base";
 import TitleText from "../../shared/TitleText";
 import SubtitleText from "../../shared/SubtitleText";
 import CategoryCard from "../../shared/CategoryCard";
 
-const Recommended = () => {
+const ForCare = () => {
   const renderItem = ({ item, index }) => (
     <CategoryCard index={index} item={item} />
   );
@@ -16,7 +16,7 @@ const Recommended = () => {
     <View style={{ flex: 1 }}>
       {/* category title */}
       <HStack marginTop={10} alignItems="center" justifyContent="space-between">
-        <TitleText>Recommended</TitleText>
+        <TitleText>For Your Care</TitleText>
         <SubtitleText>See All</SubtitleText>
       </HStack>
       {/* category details */}
@@ -29,8 +29,7 @@ const Recommended = () => {
         }}
       >
         <FlatList
-          data={recommended}
-          // nestedScrollEnabled={true}
+          data={forCare}
           scrollEnabled={false}
           numColumns="2"
           renderItem={renderItem}
@@ -41,4 +40,4 @@ const Recommended = () => {
   );
 };
 
-export default Recommended;
+export default ForCare;
