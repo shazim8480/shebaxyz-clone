@@ -1,20 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View, SafeAreaView, ScrollView } from "react-native";
+
+import { NativeBaseProvider } from "native-base";
+import HomeScreen from "./screens/HomeScreen";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <NativeBaseProvider>
+        {/* <View style={{ flex: 1 }}> */}
+        <HomeScreen />
+        {/* </View> */}
+        <StatusBar style="auto" />
+      </NativeBaseProvider>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    marginHorizontal: 15,
   },
 });
