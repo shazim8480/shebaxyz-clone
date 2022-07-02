@@ -10,7 +10,7 @@ const TitleText = (props) => {
       <Text
         textTransform={props.textTransform}
         color={colors.text}
-        fontSize="xl"
+        fontSize="lg"
         fontWeight="bold"
       >
         {props.children}

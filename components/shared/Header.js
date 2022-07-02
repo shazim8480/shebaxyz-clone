@@ -9,7 +9,7 @@ import { FontAwesome5 } from "@expo/vector-icons";
 
 const Header = () => {
   return (
-    <View style={{ flex: 1, paddingTop: 25 }}>
+    <View style={{ flex: 1, paddingTop: 35 }}>
       <Stack paddingTop={3} space={4}>
         {/* <Box justifyContent="space-between" maxWidth="100%"> */}
         <HStack space={3} justifyContent="flex-start">

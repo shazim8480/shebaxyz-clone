@@ -27,7 +27,7 @@ const ImageSlider = () => {
     return (
       <View
         style={{
-          marginTop: 25,
+          marginTop: 15,
           flex: 1,
           width: SCREEN_WIDTH - 10,
           height: "100%",
